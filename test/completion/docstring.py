@@ -1,5 +1,6 @@
 """ Test docstrings in functions and classes, which are used to infer types """
 
+
 # -----------------
 # sphinx style
 # -----------------
@@ -29,6 +30,7 @@ def sphinxy(a, b, c, d, x):
 #? dict()
 sphinxy()
 
+
 # wrong declarations
 def sphinxy2(a, b, x):
     """
@@ -48,6 +50,7 @@ def sphinxy2(a, b, x):
 
 #?
 sphinxy2()
+
 
 # -----------------
 # google style
@@ -82,8 +85,11 @@ def sphinx_google(a, b, c, d, x):
 sphinx_google()
 
 # local classes -> github #370
+
+
 class ProgramNode():
     pass
+
 
 def local_classes(node, node2):
     """
@@ -95,6 +101,7 @@ def local_classes(node, node2):
     node
     #? ProgramNode2()
     node2
+
 
 class ProgramNode2():
     pass
@@ -157,7 +164,7 @@ epydoc()
 
 
 # Returns with param type only
-def rparam(a,b):
+def rparam(a, b):
     """
     @type a: str
     """
@@ -192,12 +199,15 @@ def both():
 #? str() int()
 both()
 
+
 class Test(object):
+
     def __init__(self):
         self.teststr = ""
     """
     # jedi issue #210
     """
+
     def test(self):
         #? ['teststr']
         self.teststr
